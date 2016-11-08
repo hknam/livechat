@@ -10,16 +10,32 @@ driver.get('https://www.youtube.com/watch?v=bWqpvO8eukY')
 driver.implicitly_wait(5)
 
 
-'''
+
 while True:
-    comment_list = driver.find_elements_by_class_name('comment-text')
-    for comment in comment_list:
-        print(comment, comment.text, comment.find_elements_by_tag_name('data-timestamp'))
+    comment_ul = driver.find_element_by_id('all-comments')
+    comment_li = comment_ul.find_elements_by_css_selector('li')
+
+    for li in comment_li:
+        timestamp = li.get_attribute('data-timestamp')
+        comment = li.find_element_by_class_name('comment-text').text
+
+        print(timestamp, comment)
 
     driver.refresh()
     driver.implicitly_wait(5)
-'''
 
+
+
+    '''
+    for comment_li in comment_ul:
+        timestamp = comment_li.find_element_by_css_selector('li').get_attribute('data-timestamp')
+        comment = comment_li.find_element_by_class_name('comment-text')
+
+        print(comment.text, timestamp)
+    '''
+
+
+'''
 while True:
 
     comment_list = driver.find_elements_by_id('all-comments')
@@ -34,3 +50,4 @@ while True:
     driver.refresh()
     driver.implicitly_wait(5)
 
+'''
