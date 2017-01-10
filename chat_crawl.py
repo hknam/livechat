@@ -1,53 +1,26 @@
 from selenium import webdriver
-import os
+import time
 
 drive_path = './chromedriver'
 
 driver = webdriver.Chrome(drive_path)
 #os.environ["webdriver.chrome.driver"] = driver
 
-driver.get('https://www.youtube.com/live_chat?v=NF_uzZh6GZ4&is_popout=1')
 driver.implicitly_wait(5)
 
 
 
 while True:
-    comment_ul = driver.find_element_by_id('item')
-    comment_li = comment_ul.find_elements_by_css_selector('yt-live-chat-text-message-renderer')
+    driver.get('https://www.youtube.com/live_chat?is_popout=1&v=1oJxQoi-5C8')
+    driver.implicitly_wait(5)
 
-    for li in comment_li:
-        timestamp = li.get_attribute('data-timestamp')
-        comment = li.find_element_by_class_name('message').text
+    file_path = '/Users/namhyungyu/Documents/youtube/'
+    file_name = time.strftime('%Y-%m-%d %T:%M:%S', time.localtime())+'.html'
 
-        print(timestamp, comment)
+    f=open(file_path + file_name, 'w')
+    f.write(driver.page_source)
+    f.close()
+    print(file_name)
 
     driver.refresh()
     driver.implicitly_wait(5)
-
-
-
-    '''
-    for comment_li in comment_ul:
-        timestamp = comment_li.find_element_by_css_selector('li').get_attribute('data-timestamp')
-        comment = comment_li.find_element_by_class_name('comment-text')
-
-        print(comment.text, timestamp)
-    '''
-
-
-'''
-while True:
-
-    comment_list = driver.find_elements_by_id('all-comments')
-
-    for comment in comment_list:
-        time_stamp = comment.find_element_by_css_selector('li').get_attribute('data-timestamp')
-        comment_div = comment.find_element_by_class_name('comment-text')
-        text = comment_div.text
-
-        print(time_stamp, text)
-
-    driver.refresh()
-    driver.implicitly_wait(5)
-
-'''
