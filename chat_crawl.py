@@ -6,18 +6,18 @@ drive_path = './chromedriver'
 driver = webdriver.Chrome(drive_path)
 #os.environ["webdriver.chrome.driver"] = driver
 
-driver.get('https://www.youtube.com/watch?v=bWqpvO8eukY')
+driver.get('https://www.youtube.com/live_chat?v=NF_uzZh6GZ4&is_popout=1')
 driver.implicitly_wait(5)
 
 
 
 while True:
-    comment_ul = driver.find_element_by_id('all-comments')
-    comment_li = comment_ul.find_elements_by_css_selector('li')
+    comment_ul = driver.find_element_by_id('item')
+    comment_li = comment_ul.find_elements_by_css_selector('yt-live-chat-text-message-renderer')
 
     for li in comment_li:
         timestamp = li.get_attribute('data-timestamp')
-        comment = li.find_element_by_class_name('comment-text').text
+        comment = li.find_element_by_class_name('message').text
 
         print(timestamp, comment)
 
