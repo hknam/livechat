@@ -1,7 +1,19 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import os
-import json
+import sys
+
+html_path = sys.argv[1]
+json_path = sys.argv[2]
+
+if len(html_path) == 0:
+    print('.py [HTML FOLDER] [JSON_FOLDER]')
+    sys.exit(1)
+
+if len(json_path) == 0:
+    print('.py [HTML FOLDER] [JSON_FOLDER]')
+    sys.exit(1)
+
 
 def search(dirname):
     filenames = os.listdir(dirname)
@@ -25,13 +37,20 @@ def extract_script(page_url):
     chat_json = chat_json.split('</script>')[0].replace(';', '')
     chat_json = chat_json.strip()
 
-    json_filename = '/Users/namhyungyu/Documents/result/'+page_url.split('/')[-1]+'.json'
+    json_filename = json_path+page_url.split('/')[-1]+'.json'
 
     f=open(json_filename, 'w')
     f.write(chat_json)
     f.close()
     print(json_filename)
 
-search("/Users/namhyungyu/Documents/youtube")
+
+def main():
+
+    search(html_path)
+
+if __name__ == '__main__':
+    main()
+
 
 
