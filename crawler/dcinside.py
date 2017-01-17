@@ -7,15 +7,15 @@ import time
 
 try:
     page_number = int(sys.argv[1])
-    page_url = 'http://gall.dcinside.com/board/lists/?id=drama_new1&page=' + str(page_number)
+
 
 except IndexError as e:
     print('NEED PAGE NUMBER')
     sys.exit(1)
 
 
-def read_table(page):
-    print(page)
+def read_table(page_number):
+    page_url = 'http://gall.dcinside.com/board/lists/?id=drama_new1&page=' + str(page_number)
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
 
