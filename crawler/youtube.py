@@ -1,17 +1,29 @@
 from selenium import webdriver
 import time
+import sys
+
+
+try:
+    if not str(sys.argv[1]).startswith('https://'):
+        print('URL must start "https://www.youtube.com"')
+        sys.exit(0)
+except IndexError as e:
+    print('NEED .py [LIVE_STREAMING_URL]')
+    sys.exit(1)
+
+
+live_url = sys.argv[1]
 
 drive_path = './chromedriver'
 
 driver = webdriver.Chrome(drive_path)
 #os.environ["webdriver.chrome.driver"] = driver
 
-driver.implicitly_wait(5)
-
+#driver.implicitly_wait(5)
 
 
 while True:
-    driver.get('https://www.youtube.com/live_chat?is_popout=1&v=1oJxQoi-5C8')
+    driver.get(live_url)
     driver.implicitly_wait(5)
 
     file_path = '/Users/namhyungyu/Documents/youtube/'
@@ -24,3 +36,4 @@ while True:
 
     driver.refresh()
     driver.implicitly_wait(5)
+
