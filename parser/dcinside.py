@@ -21,15 +21,15 @@ def search(dirname):
     filenames = os.listdir(dirname)
     for filename in filenames:
         full_filename = os.path.join(dirname, filename)
-        file_name = full_filename.split('/')[-1]
-        if file_name.split('.')[1] == 'html':
-            json_result = extract_script(full_filename)
-            break
+        #file_name = full_filename.split('/')[-1]
+        if full_filename.split('.')[1] == 'html':
+            parse_html(full_filename)
+            #break
 
 
 
 def parse_html(url):
-    page_url = url
+    page_url = 'file://'+url
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
     div_top_left = soup.find('div', attrs={'class':'w_top_left'})
@@ -46,8 +46,4 @@ def parse_html(url):
     print(subject, author, utc_timestamp)
 
 
-
-
-parse_html('http://gall.dcinside.com/board/view/?id=drama_new1&no=592822&page=1330')
-
-
+search('/Users/namhyungyu/Documents/dcinside/')
