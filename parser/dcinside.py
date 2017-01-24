@@ -18,17 +18,18 @@ except IndexError as e:
 
 
 def search(dirname):
+    f=open('result.csv', 'w')
     filenames = os.listdir(dirname)
     for filename in filenames:
         full_filename = os.path.join(dirname, filename)
         #file_name = full_filename.split('/')[-1]
         if full_filename.split('.')[1] == 'html':
-            parse_html(full_filename)
+            parse_html(full_filename, f)
             #break
+    f.close()
 
 
-
-def parse_html(url):
+def parse_html(url, f):
     page_url = 'file://'+url
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
@@ -43,7 +44,9 @@ def parse_html(url):
     timestamp = li_list[0].text.strip()
     datetime_timestamp = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
     utc_timestamp = calendar.timegm(datetime_timestamp.timetuple())
+
     print(subject, author, utc_timestamp)
+    f.write(subject+','+author+','+str(utc_timestamp)+'\n')
 
 
 search('/Users/namhyungyu/Documents/dcinside/')

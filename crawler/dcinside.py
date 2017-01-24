@@ -36,7 +36,7 @@ def crawl(url):
     f.write(page_source)
     f.close()
     print(url)
-    time.sleep(random.randrange(2,5))
+    #time.sleep(random.randrange(2,5))
 
 def main():
     count = page_number
