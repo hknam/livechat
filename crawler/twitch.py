@@ -29,8 +29,8 @@ socket.send(('JOIN '+channel + '\r\n').encode())
 
 while True:
     recv_message = socket.recv(4096)
-    #recv_time = time.strftime('%Y-%m-%d %T:%M:%S', time.localtime())
-    recv_time = time.time()
+    recv_time = time.strftime('%Y-%m-%d %T:%M:%S', time.localtime())
+    #recv_time = time.time()
     if recv_message == 'PING :tmi.twitch.tv\r\n' :
         socket.send('PONG :tmi.twitch.tv\r\n')
     else:
