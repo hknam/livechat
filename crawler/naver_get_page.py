@@ -1,7 +1,7 @@
 from selenium import webdriver
 import os
 import datetime
-import random
+import sys
 from naver_get_title import *
 
 
@@ -34,8 +34,11 @@ def main():
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
 
+    if len(sys.argv[1]) == 0:
+        print('Need date')
+        sys.exit(1)
 
-    date = '2017-02-05'
+    date = sys.argv[1]
     driver = webdriver.Chrome('./chromedriver')
 
     crawl_news_list(driver, file_dir, date)
