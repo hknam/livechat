@@ -33,8 +33,8 @@ def crawl(url):
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
     page_source = str(soup.prettify())
     file_name = url.split('&')[-2].split('=')[1]
-    file_path = os.path.expanduser('~')+'/Documents/'+target_folder_name
- 
+    file_path = os.path.expanduser('~')+'/Documents/'+target_folder_name+'/'
+
     if not os.path.exists(file_path):
         os.makedirs(file_path)
     f = open(file_path + file_name + '.html', 'w')
