@@ -7,16 +7,17 @@ import os
 
 
 try:
-    page_number = int(sys.argv[1])
-    target_folder_name = sys.argv[2]
+    gallery_name = sys.argv[1]
+    page_number = int(sys.argv[2])
+    target_folder_name = sys.argv[3]
 
 except IndexError as e:
-    print('NEED [PAGE NUMBER] [TAGET FOLDER NAME]')
+    print('NEED [GALLERY NAME] [PAGE NUMBER] [TAGET FOLDER NAME]')
     sys.exit(1)
 
 
 def read_table(page_number):
-    page_url = 'http://gall.dcinside.com/board/lists/?id=drama_new1&page=' + str(page_number)
+    page_url = 'http://gall.dcinside.com/board/lists/?id='+gallery_name+'&page=' + str(page_number)
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
 
