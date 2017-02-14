@@ -3,14 +3,15 @@ import urllib.request
 import sys
 import random
 import time
+import os
 
 
 try:
     page_number = int(sys.argv[1])
-
+    target_folder_name = sys.argv[2]
 
 except IndexError as e:
-    print('NEED PAGE NUMBER')
+    print('NEED [PAGE NUMBER] [TAGET FOLDER NAME]')
     sys.exit(1)
 
 
@@ -32,11 +33,15 @@ def crawl(url):
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
     page_source = str(soup.prettify())
     file_name = url.split('&')[-2].split('=')[1]
-    f = open('/Users/namhyungyu/Documents/dcinside/' + file_name + '.html', 'w')
+    file_path = os.path.expanduser('~')+'/Documents/'+target_folder_name
+ 
+    if not os.path.exists(file_path):
+        os.makedirs(file_path)
+    f = open(file_path + file_name + '.html', 'w')
     f.write(page_source)
     f.close()
     print(url)
-    #time.sleep(random.randrange(2,5))
+    time.sleep(random.randrange(2,5))
 
 def main():
     count = page_number

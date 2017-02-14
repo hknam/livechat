@@ -19,6 +19,7 @@ def crawl_news_page(driver, file_dir):
 
         file_name = line.split('=')[2]
         file_name = file_name.replace('\n', '')
+        file_name = file_name.replace('?', '')
 
         write_f=open(file_dir+'/'+file_name+'.html', 'w')
         write_f.write(driver.page_source)
