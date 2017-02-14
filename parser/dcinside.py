@@ -18,7 +18,7 @@ except IndexError as e:
 
 
 def search(dirname):
-    f=open('result.csv', 'w')
+    f=open('result.tsv', 'w')
     filenames = os.listdir(dirname)
     for filename in filenames:
         full_filename = os.path.join(dirname, filename)
@@ -46,7 +46,7 @@ def parse_html(url, f):
     utc_timestamp = calendar.timegm(datetime_timestamp.timetuple())
 
     print(subject, author, utc_timestamp)
-    f.write(subject+','+author+','+str(utc_timestamp)+'\n')
+    f.write(subject+'\t'+author+'\t'+str(utc_timestamp)+'\n')
 
 
 search('/Users/namhyungyu/Documents/dcinside/')

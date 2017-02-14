@@ -89,3 +89,6 @@ ENV/
 .ropeproject
 
 ./html
+
+.csv
+.tsv
