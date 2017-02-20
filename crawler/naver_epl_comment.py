@@ -12,7 +12,7 @@ except IndexError as e:
     sys.exit(1)
 
 
-target_folder_name = 'sports'
+target_folder_name = 'epl'
 
 driver_path = './chromedriver'
 

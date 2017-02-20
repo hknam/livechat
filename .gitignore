@@ -90,5 +90,6 @@ ENV/
 
 *.html
 
+#result file
 *.csv
 *.tsv
