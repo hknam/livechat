@@ -5,13 +5,14 @@ import sys
 import random
 
 try:
-    target_folder_name = sys.argv[1]
+    base_url = sys.argv[1]
 
 except IndexError as e:
-    print('NEED [FOLDER NAME]')
+    print('NEED [URL]')
     sys.exit(1)
 
-base_url = 'http://comments.sports.naver.com/template/vs.nhn?category=wfootball&gameId=2017022030011002874'
+
+target_folder_name = 'sports'
 
 driver_path = './chromedriver'
 
@@ -19,7 +20,6 @@ driver = webdriver.Chrome(driver_path)
 
 page_number = 1
 
-driver.find_elements
 
 def move_next_page(page_num):
     return "document.getElementsByClassName('N=a:CML.page,r:"+str(page_num)+"')[0].click();"
@@ -29,7 +29,9 @@ def move_neet_ten_page():
 
 try:
     driver.get(base_url)
-    file_path = os.path.expanduser('~') + '/Documents/' + target_folder_name + '/'
+    date = base_url.split('gameId=')[1]
+
+    file_path = os.path.expanduser('~') + '/Documents/' + target_folder_name + '/' + date + '/'
 
     if not os.path.exists(file_path):
         os.makedirs(file_path)
