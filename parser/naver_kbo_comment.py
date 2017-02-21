@@ -13,6 +13,7 @@ try:
 except IndexError as e:
     print('NEED .py [HTML_FOLDER_PATH]')
     sys.exit(1)
+
 '''
 
 
@@ -24,7 +25,7 @@ def search(dirname):
         #file_name = full_filename.split('/')[-1]
         if full_filename.split('.')[1] == 'html':
             parse_html(full_filename, f)
-            #break
+
     f.close()
 
 
@@ -32,20 +33,26 @@ def parse_html(url, f):
     page_url = 'file://'+url
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
-    div_top_left = soup.find('div', attrs={'class':'w_top_left'})
-    dl_list = div_top_left.findAll('dl')
-    subject = dl_list[0].find('dd').text.strip()
-    author = dl_list[1].find('dd').text.strip()
 
-    div_top_right = soup.find('div', attrs={'class':'w_top_right'})
-    ul = div_top_right.find('ul')
-    li_list = ul.findAll('li')
-    timestamp = li_list[0].text.strip()
-    datetime_timestamp = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
-    utc_timestamp = calendar.timegm(datetime_timestamp.timetuple())
+    cbox_area = soup.find('div', attrs={'class':'cbox_list_area bg_kbo_WO'})
 
-    print(subject, author, utc_timestamp)
-    f.write(subject+'\t'+author+'\t'+str(utc_timestamp)+'\n')
+    cbox_list = cbox_area.find('ul', attrs={'class':'cbox_list'})
+
+    li_list = cbox_list.findAll('li')
+
+    for li in li_list:
+        if li.text == '신고':
+            continue
+        else:
+            timestamp = li.find('span', attrs={'class':'c_date'}).text
+            comment = li.find('div', attrs={'class':'cbx_cmt'}).text.strip()
+            comment = comment.replace('\n', '')
+
+            datetime_timestamp = datetime.datetime.strptime(timestamp, "%Y.%m.%d %H:%M")
+            utc_timestamp = calendar.timegm(datetime_timestamp.timetuple())
+
+            print(utc_timestamp, comment)
 
 
-search('/Users/namhyungyu/Documents/dcinside/')
+
+search('/Users/namhyungyu/Documents/kbo/33331016WOLG02016/')
