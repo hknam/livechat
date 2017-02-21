@@ -34,7 +34,8 @@ def parse_html(url, f):
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
 
-    cbox_area = soup.find('div', attrs={'class':'cbox_list_area bg_kbo_WO'})
+    # 팀별로 class name이 다름
+    cbox_area = soup.find('div', attrs={'class':'cbox_list_area bg_kbo_OB'})
 
     cbox_list = cbox_area.find('ul', attrs={'class':'cbox_list'})
 
@@ -52,7 +53,8 @@ def parse_html(url, f):
             utc_timestamp = calendar.timegm(datetime_timestamp.timetuple())
 
             print(utc_timestamp, comment)
+            f.write(str(utc_timestamp) + '\t' + comment + '\n')
 
 
 
-search('/Users/namhyungyu/Documents/kbo/33331016WOLG02016/')
+search('/Users/namhyungyu/Documents/kbo/77771102OBNC02016/')
