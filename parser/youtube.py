@@ -3,6 +3,7 @@ import urllib.request
 import os
 import sys
 
+
 html_path = sys.argv[1]
 json_path = sys.argv[2]
 
@@ -28,7 +29,8 @@ def search(dirname):
 
 
 def extract_script(page_url):
-    page_open = urllib.request.urlopen('file://'+page_url)
+    #page_open = urllib.request.urlopen('file://'+page_url)
+    page_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(page_open, 'html.parser', from_encoding='utf-8')
     scripts = soup.findAll('script')
     chat_script = scripts[7]
@@ -47,7 +49,8 @@ def extract_script(page_url):
 
 def main():
 
-    search(html_path)
+    #search(html_path)
+    extract_script('file:///Users/namhyungyu/test.html')
 
 if __name__ == '__main__':
     main()

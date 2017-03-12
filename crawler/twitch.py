@@ -26,6 +26,7 @@ socket.send(('PASS ' + password + '\r\n').encode())
 socket.send(('NICK ' + nickname + '\r\n').encode())
 socket.send(('JOIN '+channel + '\r\n').encode())
 
+f=open('twitch.tsv', 'w')
 
 while True:
     recv_message = socket.recv(4096)
@@ -35,3 +36,6 @@ while True:
         socket.send('PONG :tmi.twitch.tv\r\n')
     else:
         print(recv_time, recv_message.decode())
+        f.write(recv_message.decode()+'\n')
+
+f.close()
