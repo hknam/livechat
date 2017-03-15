@@ -44,9 +44,9 @@ try:
         if not os.path.exists(file_path):
             os.makedirs(file_path)
 
-        file_name = str(local_time)
+        file_name = str(local_time) + '.html'
 
-        f=open(folder_name+file_name, 'w')
+        f=open(file_path+file_name, 'w')
         f.write(text)
         f.close()
 
