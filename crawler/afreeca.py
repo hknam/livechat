@@ -50,7 +50,7 @@ try:
         f.write(text)
         f.close()
 
-        print(text)
+        print(local_time)
 
         driver.execute_script(clear_script)
 
