@@ -30,12 +30,7 @@ def crawl_news_page(driver, file_dir):
         line = open_f.readline()
 
 def main():
-    folder_name = datetime.date.today().isoformat()
-    file_dir = os.path.expanduser('~') + '/Documents/news/'+ folder_name + '/'
-
-
-    if not os.path.exists(file_dir):
-        os.makedirs(file_dir)
+    #folder_name = datetime.date.today().isoformat()
 
     if len(sys.argv[1]) == 0:
         print('Need date')
@@ -43,6 +38,14 @@ def main():
 
     date = sys.argv[1]
     driver = webdriver.Chrome('./chromedriver')
+
+
+    file_dir = os.path.expanduser('~') + '/Documents/news/'+ date + '/'
+
+
+    if not os.path.exists(file_dir):
+        os.makedirs(file_dir)
+
 
     crawl_news_list(driver, file_dir, date)
     crawl_news_page(driver, file_dir)
