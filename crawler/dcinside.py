@@ -4,15 +4,15 @@ import sys
 import random
 import time
 import os
-
+import datetime
 
 try:
     gallery_name = sys.argv[1]
     page_number = int(sys.argv[2])
-    target_folder_name = sys.argv[3]
+    #target_folder_name = sys.argv[3]
 
 except IndexError as e:
-    print('NEED [GALLERY NAME] [PAGE NUMBER] [TAGET FOLDER NAME]')
+    print('NEED [GALLERY NAME] [PAGE NUMBER]')
     sys.exit(1)
 
 
@@ -34,7 +34,9 @@ def crawl(url):
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
     page_source = str(soup.prettify())
     file_name = url.split('&')[-2].split('=')[1]
-    file_path = os.path.expanduser('~')+'/Documents/'+target_folder_name+'/'
+    target_folder_name = datetime.date.today().isoformat()
+
+    file_path = os.path.expanduser('~')+'/Documents/drama/'+target_folder_name + '/'
 
     if not os.path.exists(file_path):
         os.makedirs(file_path)

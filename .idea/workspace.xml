@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03eec64d-456d-4f0c-b85e-ad7d7897b16b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/naver_get_page.py" afterPath="$PROJECT_DIR$/crawler/naver_get_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/dcinside.py" afterPath="$PROJECT_DIR$/crawler/dcinside.py" />
     </list>
     <ignored path="livechat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,16 +55,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="youtube.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/youtube.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="29" column="76" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="afreeca.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/afreeca.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/crawler/naver_get_news_title.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,13 +87,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="naver_get_page.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="naver_get_page.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/naver_get_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+            <state relative-caret-position="480">
+              <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dcinside.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crawler/dcinside.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,7 +157,6 @@
         <option value="$PROJECT_DIR$/crawler/newsCrawl.py" />
         <option value="$PROJECT_DIR$/parser/navernews.py" />
         <option value="$PROJECT_DIR$/parser/naver_sports.py" />
-        <option value="$PROJECT_DIR$/crawler/dcinside.py" />
         <option value="$PROJECT_DIR$/extracter/dcinside.py" />
         <option value="$PROJECT_DIR$/crawler/naver_sports_comment.py" />
         <option value="$PROJECT_DIR$/crawler/naver_epl_comment.py" />
@@ -171,6 +172,7 @@
         <option value="$PROJECT_DIR$/parser/naver_news_headline.py" />
         <option value="$PROJECT_DIR$/crawler/naver_sports_list.py" />
         <option value="$PROJECT_DIR$/crawler/naver_get_page.py" />
+        <option value="$PROJECT_DIR$/crawler/dcinside.py" />
       </list>
     </option>
   </component>
@@ -214,8 +216,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,24 +280,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="Python.naver_get_page">
-    <configuration default="false" name="twitch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="livechat" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/twitch.py" />
-      <option name="PARAMETERS" value="https://www.twitch.tv/faker" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.dcinside">
     <configuration default="false" name="afreeca" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -360,6 +345,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="livechat" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parser/naver_news_headline.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dcinside" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="livechat" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/dcinside.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -499,19 +501,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.twitch" />
-      <item index="1" class="java.lang.String" itemvalue="Python.afreeca" />
-      <item index="2" class="java.lang.String" itemvalue="Python.naver_get_page" />
-      <item index="3" class="java.lang.String" itemvalue="Python.naver_get_title" />
-      <item index="4" class="java.lang.String" itemvalue="Python.naver_news_headline" />
+      <item index="0" class="java.lang.String" itemvalue="Python.afreeca" />
+      <item index="1" class="java.lang.String" itemvalue="Python.naver_get_page" />
+      <item index="2" class="java.lang.String" itemvalue="Python.naver_get_title" />
+      <item index="3" class="java.lang.String" itemvalue="Python.naver_news_headline" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dcinside" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.naver_get_page" />
-        <item index="1" class="java.lang.String" itemvalue="Python.naver_news_headline" />
-        <item index="2" class="java.lang.String" itemvalue="Python.naver_get_title" />
-        <item index="3" class="java.lang.String" itemvalue="Python.afreeca" />
-        <item index="4" class="java.lang.String" itemvalue="Python.twitch" />
+        <item index="0" class="java.lang.String" itemvalue="Python.dcinside" />
+        <item index="1" class="java.lang.String" itemvalue="Python.naver_get_page" />
+        <item index="2" class="java.lang.String" itemvalue="Python.naver_news_headline" />
+        <item index="3" class="java.lang.String" itemvalue="Python.naver_get_title" />
+        <item index="4" class="java.lang.String" itemvalue="Python.afreeca" />
       </list>
     </recent_temporary>
   </component>
@@ -546,7 +548,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32221064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32221064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -703,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/dcinside.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parser/naver_kbo_comment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -798,17 +793,27 @@
     <entry file="file://$PROJECT_DIR$/crawler/naver_get_news_title.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/naver_get_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+        <state relative-caret-position="480">
+          <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/dcinside.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
