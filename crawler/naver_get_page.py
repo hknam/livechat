@@ -2,8 +2,9 @@ from selenium import webdriver
 import os
 import datetime
 import sys
-from naver_get_title import *
-
+from naver_get_news_title import *
+import time
+import random
 
 def crawl_news_page(driver, file_dir):
 
@@ -24,12 +25,13 @@ def crawl_news_page(driver, file_dir):
         write_f=open(file_dir+'/'+file_name+'.html', 'w')
         write_f.write(driver.page_source)
         write_f.close()
+        time.sleep(random.randrange(2,5))
 
         line = open_f.readline()
 
 def main():
     folder_name = datetime.date.today().isoformat()
-    file_dir = '/Users/namhyungyu/Documents/naverNews/' + folder_name
+    file_dir = os.path.expanduser('~') + '/Documents/news/'+ folder_name + '/'
 
 
     if not os.path.exists(file_dir):

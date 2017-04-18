@@ -1,6 +1,8 @@
 from selenium import webdriver
 import random
 import time
+import os
+
 
 base_url = 'http://sports.news.naver.com/wfootball/vod/index.nhn?category=primera&listType=game'
 
@@ -16,7 +18,10 @@ driver = webdriver.Chrome(driver_path)
 
 driver.get(base_url)
 
-file_path = '/Users/namhyungyu/Documents/sports/'
+file_path = os.path.expanduser('~') + 'Documents/sports/'
+
+if not os.path.exists(file_path):
+    os.makedirs(file_path)
 
 
 count = 1000

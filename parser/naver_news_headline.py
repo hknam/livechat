@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import os
 
-result_file_path = '/Users/namhyungyu/Documents/result/'
+result_file_path = '/Users/hknam/Documents/'
 def search(dirname, f):
 
     filenames = os.listdir(dirname)
@@ -47,7 +47,7 @@ def parse_html(page_url, f):
 
 
 def main():
-    file_path = '/Users/namhyungyu/Downloads/news/'
+    file_path = '/Users/hknam/Documents/naverNews/'
     folder_list = os.listdir(file_path)
     f=open(result_file_path+'result', 'w')
     for list in folder_list:
