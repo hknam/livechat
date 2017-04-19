@@ -21,6 +21,7 @@ def search(dirname):
     filenames = os.listdir(dirname)
     for filename in filenames:
         full_filename = os.path.join(dirname, filename)
+        print(full_filename)
         #file_name = full_filename.split('/')[-1]
         if full_filename.split('.')[1] == 'html':
             parse_html(full_filename, f)
