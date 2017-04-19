@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import os
 
-result_file_path = '/Users/hknam/Documents/news'
+result_file_path = '/Users/hknam/Documents/news/'
 def search(dirname, f):
 
     filenames = os.listdir(dirname)
@@ -40,6 +40,7 @@ def parse_html(page_url, f):
 
 
         f.write(article_title+'\n')
+        f.write(article_body+'\n')
 
         print(page_url)
     except Exception as e:
