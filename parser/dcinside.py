@@ -48,4 +48,4 @@ def parse_html(url, f):
     f.write(subject+'\t'+author+'\t'+str(utc_timestamp)+'\n')
 
 
-search('/Users/namhyungyu/Documents/dcinside/')
+search('/Users/hknam/Documents/drama/')
