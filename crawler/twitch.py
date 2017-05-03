@@ -1,6 +1,7 @@
 from socket import *
 import time
 import sys
+import os
 
 try:
     if not str(sys.argv[1]).startswith('https://'):
@@ -26,7 +27,19 @@ socket.send(('PASS ' + password + '\r\n').encode())
 socket.send(('NICK ' + nickname + '\r\n').encode())
 socket.send(('JOIN '+channel + '\r\n').encode())
 
-f=open('twitch.tsv', 'w')
+
+file_path = os.path.expanduser('~') + '/Documents/twitch/' + channel + '/'
+
+if not os.path.exists(file_path):
+    os.makedirs(file_path)
+
+
+curr_time = time.strftime('%Y-%m-%d %T-%M-%S', time.localtime())
+
+
+
+f=open(file_path+str(curr_time)+'.tsv', 'w')
+
 
 while True:
     recv_message = socket.recv(4096)
@@ -34,8 +47,13 @@ while True:
     #recv_time = time.time()
     if recv_message == 'PING :tmi.twitch.tv\r\n' :
         socket.send('PONG :tmi.twitch.tv\r\n')
+
+    elif len(recv_message) == 0:
+        f.close()
+        os.system('python3 twitch.py '+sys.argv[1])
+        sys.exit(0)
+
     else:
         print(recv_time, recv_message.decode())
-        f.write(recv_message.decode()+'\n')
+        f.write(recv_time + '\t' + recv_message.decode()+'\n')
 
-f.close()
