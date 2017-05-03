@@ -93,3 +93,6 @@ ENV/
 #result file
 *.csv
 *.tsv
+
+#for mac
+.DS_Store
