@@ -2,6 +2,9 @@ from socket import *
 import time
 import sys
 import os
+import datetime
+import calendar
+
 
 try:
     if not str(sys.argv[1]).startswith('https://'):
@@ -35,7 +38,6 @@ if not os.path.exists(file_path):
 
 
 curr_time = time.strftime('%Y-%m-%d %T-%M-%S', time.localtime())
-
 
 
 f=open(file_path+str(curr_time)+'.tsv', 'w')
