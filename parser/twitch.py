@@ -48,6 +48,7 @@ try:
     target_folder_name = sys.argv[1]
     search_timestamp = sys.argv[2]
 except Exception as e:
+    print('[TARGET FOLDER NAME] [TIMESTAMP]')
     print(e)
     sys.exit(1)
 
