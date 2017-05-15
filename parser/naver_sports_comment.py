@@ -3,9 +3,11 @@ import os
 import urllib.request
 import datetime
 import calendar
+import sys
+
 
 def search(dirname):
-    f=open('result.tsv', 'w')
+    f=open(fname, 'w')
     filenames = os.listdir(dirname)
     for filename in filenames:
         full_filename = os.path.join(dirname, filename)
@@ -22,22 +24,19 @@ def parse_html(url, f):
     url_open = urllib.request.urlopen(page_url)
     soup = BeautifulSoup(url_open, 'html.parser', from_encoding='utf-8')
 
-    comment_list = soup.find('div', attrs={'class':'cbox_list_comment'})
-    ul = comment_list.find('ul')
-    li_list = ul.findAll('li', attrs={'class':'cbox_thumb_on'})
-    for li in li_list:
-        comment_area = li.find('div', attrs={'class':'cbox_comment_area'})
-        info_area = comment_area.find('div', attrs={'class':'cbox_info_area'})
+    comment_list = soup.find('div', attrs={'class':'cbox_list_area'})
+    time_list = comment_list.findAll('div', attrs={'class':'cbx_info'})
+    cmt_list = comment_list.findAll('div', attrs={'class':'cbx_cmt'})
 
-        box_section = info_area.find('div', attrs={'class':'cbox_section'})
-        user_id = box_section.find('span', attrs={'class':'cbox_user_id'}).text
-        date = box_section.find('span', attrs={'class':'cbox_date'}).text
+    for index in range(0, len(cmt_list)):
+        cmt = cmt_list[index].text
+        cmt = cmt.strip()
+        timestamp = time_list[index].find('span', attrs={'class':'c_date'}).text
+        timestamp = timestamp.strip()
+        print(timestamp, cmt)
+        f.write(timestamp + '\t' + cmt + '\n')
 
-        comment = comment_area.find('div', attrs={'class':'cbox_desc_comment'}).text.strip()
-        comment = comment.replace('\n', '')
+target_folder_path = sys.argv[1]
+fname = target_folder_path.split('/')[-1] + '.tsv'
 
-        print(user_id, date, comment)
-
-
-
-search('/Users/namhyungyu/Documents/sports/2017021930011002880/')
+search(target_folder_path)
