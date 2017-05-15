@@ -96,3 +96,4 @@ ENV/
 
 #for mac
 .DS_Store
+.idea
