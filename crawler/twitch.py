@@ -18,8 +18,10 @@ except IndexError as e:
 server_name = 'irc.twitch.tv'
 port = 6667
 
-password = 'oauth:u0t937zaesb5y4lczpopxfr7faurgy'
-nickname = 'w88272'
+# password : oauth token
+#password = ''
+# nick : twitch nickname
+#nickname = ''
 #channel = '#gabrielcro'
 channel = '#' + sys.argv[1].split('/')[-1]
 
